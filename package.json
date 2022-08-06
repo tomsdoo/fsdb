@@ -1,0 +1,20 @@
+{
+  "name": "fsdb",
+  "version": "1.0.0",
+  "description": "It is a storage in a file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomsdoo/fsdb.git"
+  },
+  "keywords": ["fsdb"],
+  "author": "tom",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tomsdoo/fsdb/issues"
+  },
+  "homepage": "https://github.com/tomsdoo/fsdb#readme"
+}
