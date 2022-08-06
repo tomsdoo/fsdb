@@ -10,11 +10,16 @@
     "type": "git",
     "url": "git+https://github.com/tomsdoo/fsdb.git"
   },
-  "keywords": ["fsdb"],
+  "keywords": [
+    "fsdb"
+  ],
   "author": "tom",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/tomsdoo/fsdb/issues"
   },
-  "homepage": "https://github.com/tomsdoo/fsdb#readme"
+  "homepage": "https://github.com/tomsdoo/fsdb#readme",
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
 }
