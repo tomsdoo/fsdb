@@ -32,4 +32,33 @@ describe("FileDb", () => {
       undefined
     );
   });
+
+  it("save() new item", async () => {
+    const savingObj = {
+      testValue: uuid()
+    };
+    assert.equal(
+      await fileDb.save(savingObj)
+        .then(({ _id, ...rest }) => JSON.stringify(rest)),
+      JSON.stringify(savingObj)
+    );
+  });
+
+  it("save() update item", async () => {
+    const savingObj = {
+      testValue: "value before updating"
+    };
+
+    const saved = await fileDb.save(savingObj);
+    await fileDb.save({
+      ...saved,
+      testValue: "value after updating"
+    });
+
+    assert.equal(
+      await fileDb.get(saved._id)
+        .then(({ testValue }) => testValue),
+      "value after updating"
+    );
+  });
 });
