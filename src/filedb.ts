@@ -41,6 +41,6 @@ export class FileDb {
       .then(() => objToBeSaved);
   }
   public async drop(){
-    return await unlink(this.filePath);
+    return await unlink(this.filePath).catch(() => undefined);
   }
 }
