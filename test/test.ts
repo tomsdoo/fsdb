@@ -25,4 +25,11 @@ describe("FileDb", () => {
       JSON.stringify({})
     );
   });
+
+  it("value of item that does not exist is undefined", async () => {
+    assert.equal(
+      await fileDb.get(uuid()),
+      undefined
+    );
+  });
 });
