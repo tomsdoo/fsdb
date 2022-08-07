@@ -61,4 +61,15 @@ describe("FileDb", () => {
       "value after updating"
     );
   });
+
+  it("remove()", async () => {
+    await fileDb.save({ tset: 1 });
+    const allObj = await fileDb.get();
+    const key = Object.keys(allObj)[0];
+    await fileDb.remove(key);
+    assert.equal(
+      key in await fileDb.get(),
+      false
+    );
+  });
 });
