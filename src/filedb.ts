@@ -40,6 +40,11 @@ export class FileDb {
       }))
       .then(() => objToBeSaved);
   }
+  public async remove(id: string){
+    return await this.getContent()
+      .then(({ [id]: any, ...rest }) => this.saveContent(rest))
+      .then(() => undefined);
+  }
   public async drop(){
     return await unlink(this.filePath).catch(() => undefined);
   }
