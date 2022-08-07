@@ -1,5 +1,5 @@
 {
-  "name": "fsdb",
+  "name": "@tomsd/fsdb",
   "version": "1.0.0",
   "description": "It is a storage in a file",
   "main": "dist/cjs/index.js",
