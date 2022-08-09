@@ -62,6 +62,13 @@ describe("FileDb", () => {
     );
   });
 
+  it("getIds() returns a Promise that resolves string array", async () => {
+    assert(
+      (await fileDb.getIds())
+        .every(key => typeof key === "string")
+    )
+  });
+
   it("remove()", async () => {
     await fileDb.save({ tset: 1 });
     const allObj = await fileDb.get();
