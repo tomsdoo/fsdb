@@ -45,6 +45,10 @@ export class FileDb {
       .then(({ [id]: any, ...rest }) => this.saveContent(rest))
       .then(() => undefined);
   }
+  public async getIds(){
+    return await this.getContent()
+      .then(obj => Object.keys(obj));
+  }
   public async drop(){
     return await unlink(this.filePath).catch(() => undefined);
   }
