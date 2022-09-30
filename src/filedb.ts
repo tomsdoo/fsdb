@@ -6,42 +6,49 @@ export class FileDb {
   constructor(filePath: string) {
     this.filePath = filePath;
   }
-  protected async getContent() {
+
+  protected async getContent(): Promise<any> {
     return await readFile(this.filePath, { encoding: "utf8" })
       .then((text) => JSON.parse(text))
       .catch((e) => ({}));
   }
-  protected async saveContent(obj: object) {
+
+  protected async saveContent(obj: object): Promise<any> {
     return await writeFile(this.filePath, JSON.stringify(obj), {
       encoding: "utf8",
     });
   }
-  public async get(id?: string) {
-    return await this.getContent().then((obj) => (id ? obj[id] : obj));
+
+  public async get(id?: string): Promise<any> {
+    return await this.getContent().then((obj) => (id != null ? obj[id] : obj));
   }
-  public async save(obj: object) {
+
+  public async save(obj: object): Promise<any> {
     const objToBeSaved = {
       _id: uuid(),
       ...obj,
     };
     return await this.getContent()
-      .then((obj) =>
-        this.saveContent({
+      .then(async (obj) =>
+        await this.saveContent({
           ...obj,
           [objToBeSaved._id]: objToBeSaved,
         })
       )
       .then(() => objToBeSaved);
   }
-  public async remove(id: string) {
+
+  public async remove(id: string): Promise<undefined> {
     return await this.getContent()
-      .then(({ [id]: any, ...rest }) => this.saveContent(rest))
+      .then(async ({ [id]: any, ...rest }) => await this.saveContent(rest))
       .then(() => undefined);
   }
-  public async getIds() {
+
+  public async getIds(): Promise<string[]> {
     return await this.getContent().then((obj) => Object.keys(obj));
   }
-  public async drop() {
+
+  public async drop(): Promise<any> {
     return await unlink(this.filePath).catch(() => undefined);
   }
 }
