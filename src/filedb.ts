@@ -29,11 +29,12 @@ export class FileDb {
       ...obj,
     };
     return await this.getContent()
-      .then(async (obj) =>
-        await this.saveContent({
-          ...obj,
-          [objToBeSaved._id]: objToBeSaved,
-        })
+      .then(
+        async (obj) =>
+          await this.saveContent({
+            ...obj,
+            [objToBeSaved._id]: objToBeSaved,
+          })
       )
       .then(() => objToBeSaved);
   }
