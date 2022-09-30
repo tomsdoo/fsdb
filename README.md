@@ -1,6 +1,13 @@
 # @tomsd/fsdb
 
-It's a data handler that a file is as the store.
+It's a data handler that a file is as the store.  
+See [fsdb.netlify.app](https://fsdb.netlify.app/) also.
+
+![npm](https://img.shields.io/npm/v/@tomsd/fsdb)
+![NPM](https://img.shields.io/npm/l/@tomsd/fsdb)
+![npms.io (quality)](https://img.shields.io/npms-io/quality-score/@tomsd/fsdb)
+![Libraries.io dependency status for latest release](https://img.shields.io/librariesio/release/npm/@tomsd/fsdb)
+![Maintenance](https://img.shields.io/maintenance/yes/2022)
 
 ## Installation
 
