@@ -7,15 +7,18 @@
   "types": "dist/esm/index.d.ts",
   "scripts": {
     "build": "tsc --project tsconfig.cjs.json && tsc --project tsconfig.esm.json",
-    "format": "npm run format:src && npm run format:test",
+    "format": "npm run format:src && npm run format:test && npm run format:document",
     "format:src": "prettier --write src/**/*.ts",
     "format:test": "prettier --write test/**/*.ts",
+    "format:document": "prettier --write docs/**/*.html",
     "lint:src": "eslint src/**/*.ts",
     "lint:test": "eslint test/**/*.ts",
     "prepare": "husky install",
+    "serve:doc": "mdbook --serve --directory docs",
     "test": "TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' mocha -r ts-node/register \"test/test.ts\" --timeout 30000"
   },
   "lint-staged": {
+    "docs/**/*.html": "npm run format:document",
     "src/**/*.ts": [
       "npm run lint:src",
       "npm run format:src"
@@ -39,6 +42,7 @@
   },
   "homepage": "https://github.com/tomsdoo/fsdb#readme",
   "devDependencies": {
+    "@tomsd/md-book": "^0.17.0",
     "@types/mocha": "^9.1.1",
     "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.38.1",
