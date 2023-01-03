@@ -6,7 +6,7 @@ It is a storage in a file.
 ![NPM](https://img.shields.io/npm/l/@tomsd/fsdb)
 ![npms.io (quality)](https://img.shields.io/npms-io/quality-score/@tomsd/fsdb)
 ![Libraries.io dependency status for latest release](https://img.shields.io/librariesio/release/npm/@tomsd/fsdb)
-![Maintenance](https://img.shields.io/maintenance/yes/2022)
+![Maintenance](https://img.shields.io/maintenance/yes/2023)
 
 [![](https://nodei.co/npm/@tomsd/fsdb.svg?mini=true)](https://www.npmjs.com/package/@tomsd/fsdb)
 
