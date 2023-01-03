@@ -7,7 +7,7 @@ See [fsdb.netlify.app](https://fsdb.netlify.app/) also.
 ![NPM](https://img.shields.io/npm/l/@tomsd/fsdb)
 ![npms.io (quality)](https://img.shields.io/npms-io/quality-score/@tomsd/fsdb)
 ![Libraries.io dependency status for latest release](https://img.shields.io/librariesio/release/npm/@tomsd/fsdb)
-![Maintenance](https://img.shields.io/maintenance/yes/2022)
+![Maintenance](https://img.shields.io/maintenance/yes/2023)
 
 ## Installation
 
